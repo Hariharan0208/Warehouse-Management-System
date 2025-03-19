@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{% static 'Css/Lg.css' %}">
+    
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+        <title>Login Page</title>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img class="image" src="{% static 'Image/logo.png' %}" alt="Bootstrap" width="150px" height="60px">
+                </a>
+    
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="navbar-brand" aria-current="page" href="{% url 'Home_Page' %}"><i class="fa-solid fa-house"></i> Home</a>
+                      <a class="navbar-brand" href="{% url 'Sign_Page' %}">Register </a>
+                      <a class="navbar-brand" href="{% url 'Login_Page' %}">Login</a>
+                        <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+                    </div>
+              </div>
+            </div>
+        </nav>
+        
+    </head>
+    <body>
+
+        {% for m in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{m}}
+        </div>
+        {% endfor %}
+        <div class="login">
+            <div class="login__content">
+                <div class="login__img">
+                    <img src="{% static 'Image/img-login.svg' %}" alt="">
+                </div>
+
+                <div class="login__forms">
+                    <form action="{% url 'LoginPage_Backend' %}" class="login__registre" method="POST">
+                        {% csrf_token %}
+                        <h1 class="login__title">Sign In</h1>
+    
+                        <div class="login__box">
+                            <i class='bx bx-user login__icon'></i>
+                            <input type="text" placeholder="Username" name="username" class=" login__input" required>
+                        </div>
+    
+                        <div class="login__box">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="password" placeholder="Password" name="password" class="login__input" required>
+                        </div>
+
+                        <button class="login__button" type="submit" >Sign In</button>
+
+                        <div>
+                            <span class="login__account">Don't have an Account ?</span>
+                            <a class="login__signin" style="text-decoration: none;" href="{% url 'Sign_Page' %}">Sign Up</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer class="footer">
+      <br><br>
+      <div class="row container-fluid">
+        <div class="col">
+          <div class="logo d-flex">
+            <img src="{% static 'Image/logo.png' %}" alt="logo" />
+          </div>
+          <p class="text-light">
+            This service allows customers to order items online or via an app, and have them
+            delivered to their doorstep.
+          </p>
+          <div class="icons d-flex">
+            <div class="icon d-flex">
+              <i class="bx bxl-facebook"></i>
+            </div>
+            <div class="icon d-flex"><i class="bx bxl-twitter"></i></div>
+            <div class="icon d-flex"><i class="bx bxl-linkedin"></i></div>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <h4 class="text-warning">Company</h4>
+            <hr>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">All Products</a>
+            <a href="#">Locations Map</a>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <h4 class="text-warning">Services</h4>
+            <hr>
+            <a href="#">Order tracking</a>
+            <a href="#">Wish List</a>
+            <a href="#">My account</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <h4 class="text-warning">Support</h4>
+            <hr>
+            <a href="#">FAQ</a>
+            <a href="#">Policy</a>
+            <a href="#">Business</a>
+            <a href="#">Support Career</a>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <h4 class="text-warning">Contact</h4>
+            <hr>
+            <a href="#">WhatsApp</a>
+            <a href="#">Support 24</a>
+            <a href="#">Quick Chat</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+      <div class="footer-bottom">
+        <div class="row container d-flex">
+          <p class="text-center text-warning">Copyright © 2024 FDelivery Created by Hariharan</p>
+        </div>
+      </div>
+</html>

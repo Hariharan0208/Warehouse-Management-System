@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<style>
+nav{
+  background: linear-gradient(90deg,#00dbde,#fc00ff);
+}
+.navbar-brand:hover{
+  font-size: 25px;
+}
+.cont{
+      max-width:500px ;
+      background-color: lavender;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 1.523);
+
+    }
+.footer {
+  background-color: #282c34;
+  color: #fff;
+  padding: 20px 10px;
+}
+.footer .row {
+  display: flex;
+  justify-content: space-evenly; /* Space out columns evenly */
+  align-items: flex-start; /* Align content at the top */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.footer .col div {
+  margin: 0 20px; /* Space between sections */
+}
+.footer .col h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer .col a {
+  display: block;
+  color: #b0bec5;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.footer h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer a {
+  display: block;
+  color: #b0bec5;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #ff9800;
+}
+
+.footer .logo img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer .icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer .icons .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #3b3b3b;
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.footer .icons .icon i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.footer .icons .icon:hover {
+  transform: scale(1.1);
+  background-color: #ff9800;
+}
+
+.footer-bottom {
+  background-color: #212529;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+  color: #b0bec5;
+}
+
+@media (max-width: 1024px) and (max-height: 1368px) {
+  .footer {
+    padding: 6rem 0; /* Reduce padding for tablets and smaller laptops */
+  }
+
+  .footer .row {
+    display: block; /* Stack columns vertically */
+    text-align: center; /* Center content */
+  }
+
+  .footer .col {
+    margin-bottom: 20px; /* Add space between columns */
+    text-align: center;
+    flex-direction: column; /* Stack the content inside each column */
+  }
+
+  .footer .col > div {
+    margin-bottom: 10px; /* Space between different sections in columns */
+  }
+
+  .footer .col:first-child {
+    display: none; /* Optionally hide the first column (logo and social) on tablets/laptops */
+  }
+
+  .footer .icons {
+    justify-content: center; /* Center social media icons */
+    margin-top: 20px;
+  }
+
+  .footer .footer-bottom {
+    padding: 10px 0; /* Smaller bottom section padding */
+  }
+
+  .footer .footer-bottom p {
+    font-size: 12px;
+  }
+
+  .footer .col h4 {
+    font-size: 18px; /* Increase heading size for readability */
+  }
+
+  .footer .col a {
+    font-size: 14px; /* Slightly larger links */
+  }
+}
+  /* Grid-style for smaller screens (max-width: 567px) */
+  @media (max-width: 576px) {
+  .footer .row {
+    flex-direction: column; /* Stack sections vertically on mobile */
+    align-items: center;
+  }
+
+  .footer .col div {
+    margin: 15px 0; /* Add spacing between vertical sections */
+    text-align: center; /* Center-align text for small screens */
+  }
+
+  .footer .col h4 {
+    font-size: 14px; /* Slightly smaller heading font size on small screens */
+  }
+
+  .footer .col a {
+    font-size: 12px; /* Reduce font size for links on small screens */
+  }
+
+  .footer .icons {
+    flex-direction: row; /* Keep icons in a row */
+    gap: 15px; /* Add more space between icons */
+    margin-top: 15px; /* Provide additional space above the icons */
+  }
+
+  .footer .icons .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px; /* Slightly smaller icons */
+  }
+
+  .footer-bottom {
+    font-size: 10px; /* Reduce font size of the footer-bottom text */
+    padding: 8px 0; /* Reduce padding to fit on smaller screens */
+  }
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'Css/Card.css' %}">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
+    <title>User Home</title>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'Image/logo.png' %}" alt="" width="150px" height="40px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="container-fluid">
+          <ul class="navbar-nav justify-content-center">
+            <li>
+              <form class="d-flex" role="search">
+                <input class="form-control me-auto" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-danger ms-5" type="submit">Search</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li>
+                    <a class="navbar-brand" href="{% url 'UserHome_Page' %}"><i class="fa-solid fa-house"></i> Home </a>
+                  </li>
+                  <li class="nav-item">
+                        <a class="navbar-brand " href="{% url 'AddToCart_Page' %}"><i class="fa-solid fa-cart-plus"></i> Add Cart </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="navbar-brand " href="{% url 'OrderTracking_Page' %}">Order</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="navbar-brand " href="{% url 'UserProfile' %}"><i class="fa-solid fa-user"></i> Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="navbar-brand " href="{% url 'Login_Page' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                  </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+  <br>
+  <center>
+    <div>
+        <div class="col-4">
+            {% for m in messages%}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{m}} </strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </center>
+    <br><br>
+  <div class=" cont container mt-4 mx-auto p-4 my-5 border rounded">
+    <h1 class="text-center" style="color: orangered;">𝕯𝖊𝖑𝖎𝖛𝖊𝖗𝖞 𝕬𝖌𝖊𝖓𝖙 𝕻𝖗𝖔𝖋𝖎𝖑𝖊</h1>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <strong style="color: navy">𝒩𝒶𝓂𝑒:</strong> {{Data.first_name}} {{Data.last_name}} <br>
+            <strong style="color: navy">𝒰𝓈𝑒𝓇𝓃𝒶𝓂𝑒:</strong> {{Data.username}} <br>
+            <strong style="color: navy">𝒜𝒹𝒹𝓇𝑒𝓈𝓈:</strong> {{Data.Address}} <br>
+            <strong style="color: navy">𝒫𝒽𝑜𝓃𝑒:</strong> {{Data.Phone}} <br>
+            <strong style="color: navy">𝓔𝓶𝓪𝓲𝓵:</strong> {{Data.email}} <br>
+        </div>
+        <div class="col-md-6">
+            <strong style="color: navy">𝒫𝓇𝑜𝒻𝒾𝓁𝑒 𝐼𝓂𝒶𝑔𝑒:</strong> <br>
+            <img src="{{Data.Image.url}}" class="ig img-fluid" alt="" style="max-width: 150px; border-radius: 10px;"> <br><br>
+            <a href="{% url 'Agentedit_profile' Data.id %}"><button class="btn btn-outline-primary mt-3">Edit Profile</button></a>
+            <a href="{% url 'ChangePassword'%}"><button class="btn btn-outline-warning mt-3">Reset Password</button></a>
+        </div>
+    </div>
+</div>
+<br><br>
+</body>
+<footer class="footer">
+  <br><br>
+  <div class="row container-fluid">
+    <div class="col">
+      <div class="logo d-flex">
+        <img src="{% static 'Image/logo.png' %}" alt="logo" />
+      </div>
+      <p class="text-light">
+        This service allows customers to order items online or via an app, and have them
+        delivered to their doorstep.
+      </p>
+      <div class="icons d-flex">
+        <div class="icon d-flex">
+          <i class="bx bxl-facebook"></i>
+        </div>
+        <div class="icon d-flex"><i class="bx bxl-twitter"></i></div>
+        <div class="icon d-flex"><i class="bx bxl-linkedin"></i></div>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <h4 class="text-warning">Company</h4>
+        <hr>
+        <a href="#">About Us</a>
+        <a href="#">Blog</a>
+        <a href="#">All Products</a>
+        <a href="#">Locations Map</a>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <h4 class="text-warning">Services</h4>
+        <hr>
+        <a href="#">Order tracking</a>
+        <a href="#">Wish List</a>
+        <a href="#">My account</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <h4 class="text-warning">Support</h4>
+        <hr>
+        <a href="#">FAQ</a>
+        <a href="#">Policy</a>
+        <a href="#">Business</a>
+        <a href="#">Support Career</a>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <h4 class="text-warning">Contact</h4>
+        <hr>
+        <a href="#">WhatsApp</a>
+        <a href="#">Support 24</a>
+        <a href="#">Quick Chat</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  <div class="footer-bottom">
+    <div class="row container d-flex">
+      <p class="text-center text-warning">Copyright © 2024 FDelivery Created by Hariharan</p>
+    </div>
+  </div>
+</html>
